@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { dummyPostsData } from '../assets/assets'
 import Loading from '../components/Loading';
+import StoriesBar from '../components/StoriesBar';
 
 const Feed = () => {
  const [feeds, setfeeds] = useState([]);
@@ -12,6 +13,7 @@ const Feed = () => {
 
  useEffect(()=>{
   fetchFeeds()
+  setLoading(false);
  }, [])
 
  useEffect(()=>{})
@@ -21,13 +23,19 @@ const Feed = () => {
 
       {/* stories and post list */}
       <div>
-        <h1 className='p-4 space-y-6'>Stories</h1>
+        <StoriesBar />
         <div>
-          
+          List of Posts
         </div>
       </div>
 
       {/* right side */}
+      <div>
+        <div> 
+          <h1>Sponsered</h1>
+        </div>
+        <h1>Recent Messages</h1>
+      </div>
       
     </div>
   ): <Loading/>
