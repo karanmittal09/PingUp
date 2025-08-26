@@ -132,6 +132,7 @@ const StoryModal = ({ setShowModal, fetchStories }) => {
         >
           <Sparkle size={18} /> Create Story
         </button>
+        
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { dummyStoriesData } from "../assets/assets";
 import { Plus } from "lucide-react";
 import moment from "moment";
 import StoryModal from "./StoryModal";
+import StoryViewer from "./StoryViewer";
 
 
 const StoriesBar = () => {
@@ -37,6 +38,7 @@ const StoriesBar = () => {
         {/* stories card */}
         {stories.map((story, index) => (
           <div
+            onClick={()=>setViewStory(story)}
             key={index}
             className="
               relative rounded-lg shadow
@@ -84,6 +86,9 @@ const StoriesBar = () => {
 
       {/* add story modal */}
       {showModal && <StoryModal setShowModal={setShowModal} fetchStories={fetchStories}/>}
+
+      {/* view story modal */}
+      {viewStory && <StoryViewer viewStory={viewStory} setViewStory={setViewStory} />}
 
     </div>
   );
