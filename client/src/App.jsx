@@ -25,7 +25,10 @@ const App = () => {
             <Route path='messages/:userId' element={<ChatBox />}></Route>
             <Route path = 'connections' element={<Connections />}></Route>
             <Route path = 'discover' element={<Discover />}></Route>
-            <Route path = 'profile/:profileId' element={<Profile />}></Route>
+            {/* <Route path = 'profile/:profileId' element={<Profile />}></Route> */}
+            <Route path="profile" element={<Profile />} />
+            <Route path="profile/:profileId" element={<Profile />} />
+
             <Route path = 'create-post' element={<CreatePost />}></Route>
         </Route>
       </Routes>
